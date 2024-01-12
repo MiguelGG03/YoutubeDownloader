@@ -94,5 +94,3 @@ class VideoQuality(Quality):
             print(f"       - preferedformat : {self.dictionary[a]['postprocessors'][0]['preferedformat']}")
             print()
             counter += 1
-
-
