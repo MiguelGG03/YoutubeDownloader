@@ -33,10 +33,10 @@ class YoutubeDownloader:
         self.quality = a.quality
         
     def download(self):
-        # Get the best audio possible
         self.quality['outtmpl'] = self.destinyFolder
         with yt_dlp.YoutubeDL(self.quality) as ydl:
             ydl.download([self.url])
+            
             
 if __name__ == "__main__":
     y = YoutubeDownloader()
