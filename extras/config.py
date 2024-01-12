@@ -104,4 +104,3 @@ VIDEO_OPTS = {
 
 PATH = Path.cwd()
 PATH_DESCARGAS = PATH / 'descargas'
-RUTA_DESCARGAS = str(PATH_DESCARGAS / "%(title)s.%(ext)s")
