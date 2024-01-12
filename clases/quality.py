@@ -24,18 +24,21 @@ class Quality(ABC):
     def setQuality(self,selection):
         # Establece la calidad de audio basada en la selección del usuario.
         # Convierte la selección numérica en una calidad de audio (baja, media, alta).
-        if selection == "1":
-            selection = "baja"
-        elif selection == "2":
-            selection = "media"
-        elif selection == "3":
-            selection = "alta"
-        else:
-            print(f"El valor {str(selection)} no ha podido ser procesado")
-            return
+        lista = []
+        try:
+            selection = int(selection)
+            selection -= 1
+        except:
+            print(f"Error: {selection} no es una opción válida (necesariamente int) .")    
         
-        # Asigna la opción de configuración correspondiente a la calidad seleccionada.
-        self.quality = self.dictionary[selection]
+        for name in self.dictionary:
+            lista.append(name)
+            
+        if selection < 0 or selection > len(lista) - 1:
+            print(f"Error: {selection} no es una opción válida (fuera de rango).")
+        else:
+            self.quality = self.dictionary[lista[selection]]
+            print(f"Se ha seleccionado la calidad {lista[selection]}")
 
         
     @abstractmethod
@@ -91,3 +94,14 @@ class VideoQuality(Quality):
             print(f"       - preferedformat : {self.dictionary[a]['postprocessors'][0]['preferedformat']}")
             print()
             counter += 1
+
+
+if __name__=='__main__':
+    # Prueba de la clase Quality
+    print("Prueba de la clase Quality")
+    a = AudioQuality()
+    lista = []
+    for name in a.dictionary:
+        lista.append(name)
+        
+    print(lista)
