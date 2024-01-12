@@ -1,7 +1,7 @@
 import yt_dlp
-import sys
 from pathlib import Path
 from quality import AudioQuality, VideoQuality
+import sys
 
 root_path = Path(__file__).resolve().parent.parent
 sys.path.append(str(root_path))
