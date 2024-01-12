@@ -37,6 +37,5 @@ class YoutubeDownloader:
             
 if __name__ == "__main__":
     y = YoutubeDownloader()
-    s = "3"
-    y.setAudioQuality(s)
+    y.setAudioQuality("3")
     y.download()
