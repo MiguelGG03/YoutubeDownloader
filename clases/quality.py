@@ -96,10 +96,3 @@ class VideoQuality(Quality):
             counter += 1
 
 
-if __name__=='__main__':
-    # Prueba de la clase Quality
-    print("Prueba de la clase Quality")
-    a = VideoQuality()
-    a.qualityPrinter()
-    a.setQuality("3")
-    print(a.quality)
