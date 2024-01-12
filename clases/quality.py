@@ -99,9 +99,7 @@ class VideoQuality(Quality):
 if __name__=='__main__':
     # Prueba de la clase Quality
     print("Prueba de la clase Quality")
-    a = AudioQuality()
-    lista = []
-    for name in a.dictionary:
-        lista.append(name)
-        
-    print(lista)
+    a = VideoQuality()
+    a.qualityPrinter()
+    a.setQuality("3")
+    print(a.quality)
